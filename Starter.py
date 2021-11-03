@@ -3,6 +3,8 @@ from tkinter import filedialog as fd
 import os
 import sys
 
+os.system("cls")
+
 def fill_listbox():
 	listbx_file = open("data.txt","r")
 	for x in listbx_file:
@@ -38,7 +40,10 @@ def BT_delete():
 def BT_start():
 	try:
 		index = listbx.curselection()[0]
-		os.system(data[index])
+		value = str(listbx.get(index))
+		value = "\"" + value + "\""
+		print(value)
+		os.system(value)
 		lbl.configure(text = "Starting", fg = 'green2')
 	except:
 		lbl.configure(text = "Tuple index out of range", fg = 'red')
