@@ -49,7 +49,7 @@ def BT_start():
 		lbl.configure(text = "Tuple index out of range", fg = 'red')
 
 def BT_close():
-	exit()
+	win.destroy()
 
 data = []
 try:
